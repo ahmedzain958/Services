@@ -25,9 +25,10 @@ class IntentServiceActivity : AppCompatActivity() {
             super.onReceiveResult(resultCode, resultData)
             if (resultData != null && resultCode == 18) {
                 val result = resultData.getString("resultIntent")
-                handler.post({
+                // to run data in the main thread
+                handler.post {
                     textView.text = result
-                })
+                }
             }
         }
     }

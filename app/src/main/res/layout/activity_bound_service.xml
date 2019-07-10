@@ -31,10 +31,11 @@
             app:layout_constraintStart_toStartOf="@+id/mul" app:layout_constraintStart_toEndOf="@+id/editText2"
             app:layout_constraintHorizontal_bias="0.5"/>
     <Button
-            android:text="Button"
+            android:text="Add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/add"
+            android:onClick="onClickEvent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
             app:layout_constraintTop_toBottomOf="@+id/editText2"
@@ -43,33 +44,45 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintEnd_toStartOf="@+id/mul"/>
     <Button
-            android:text="Button"
+            android:text="Sub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sub"
+            android:onClick="onClickEvent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/add"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintEnd_toStartOf="@+id/button5"/>
+            app:layout_constraintEnd_toStartOf="@+id/div"/>
     <Button
-            android:text="Button"
+            android:text="mul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onClickEvent"
             android:id="@+id/mul"
             app:layout_constraintStart_toEndOf="@+id/add"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/editText3"
-            app:layout_constraintBottom_toTopOf="@+id/button5"/>
+            app:layout_constraintBottom_toTopOf="@+id/div"/>
     <Button
-            android:text="Button"
+            android:text="div"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button5"
+            android:id="@+id/div"
+            android:onClick="onClickEvent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/sub"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/mul"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewResult"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/editText2" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/add"/>
 </android.support.constraint.ConstraintLayout>

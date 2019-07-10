@@ -27,9 +27,6 @@ class MainActivity : AppCompatActivity() {
         start.setOnClickListener {
             startService(intent)
         }
-        checkBox.setOnClickListener {
-            startService(intent)
-        }
         stop.setOnClickListener {
             stopService(intent)
         }
