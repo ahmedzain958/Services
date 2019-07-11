@@ -13,12 +13,16 @@ import kotlinx.android.synthetic.main.activity_bound_service.*
 class BoundServiceActivity : AppCompatActivity() {
 
     var isBound = false
+    lateinit var myBoundService: MyBoundService
+
     val serviceConnection = object : ServiceConnection {
         override fun onServiceDisconnected(p0: ComponentName?) {
             isBound = true
         }
 
-        override fun onServiceConnected(p0: ComponentName?, p1: IBinder?) {
+        override fun onServiceConnected(p0: ComponentName?, iBinder: IBinder?) {
+            val binder: MyBoundService.MyLocalBinder = iBinder as MyBoundService.MyLocalBinder
+            myBoundService = binder.getService()
             isBound = false
         }
     }
@@ -41,8 +45,10 @@ class BoundServiceActivity : AppCompatActivity() {
 
         if (isBound) {
             when (v.id) {
-                R.id.add ->
-
+                R.id.add -> textViewResult.setText(myBoundService.add(number1, number2))
+                R.id.sub -> textViewResult.setText(myBoundService.sub(number1, number2))
+                R.id.mul -> textViewResult.setText(myBoundService.mul(number1, number2))
+                R.id.div -> textViewResult.setText(myBoundService.div(number1, number2))
             }
         }
     }

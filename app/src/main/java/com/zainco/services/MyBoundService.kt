@@ -18,19 +18,19 @@ class MyBoundService : Service() {
         return myLocalBinder
     }
 
-    public fun add(val1: Int, val2: Int): Int {
+     fun add(val1: Int, val2: Int): Int {
         return val1 + val2
     }
 
-    public fun mul(val1: Int, val2: Int): Int {
+     fun mul(val1: Int, val2: Int): Int {
         return val1 * val2
     }
 
-    public fun sub(val1: Int, val2: Int): Int {
+     fun sub(val1: Int, val2: Int): Int {
         return val1 - val2
     }
 
-    public fun div(val1: Int, val2: Int): Int {
+     fun div(val1: Int, val2: Int): Int {
         return val1 / val2
     }
 }
